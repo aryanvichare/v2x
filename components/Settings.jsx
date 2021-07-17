@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import clsx from "clsx";
 
 const Settings = () => {
-  const [speed, setSpeed] = useState(1);
   const [temperature, setTemperature] = useState(54);
+  const [speed, setSpeed] = useState(2);
   const [chillMode, setChillMode] = useState(1); // binary
 
   return (
