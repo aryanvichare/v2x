@@ -3,10 +3,16 @@ import CarSection from "@/components/CarSection";
 import Navbar from "@/components/Navbar";
 import Settings from "@/components/Settings";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
     <div>
+      <Toaster
+        position='bottom-right'
+        reverseOrder={false}
+        toastOptions={{ duration: 3000 }}
+      />
       <Head>
         <title>V2X</title>
         <meta

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import clsx from "clsx";
+import { sendCustomToast } from "@/utils/sendToast";
 
 const Settings = () => {
   const [temperature, setTemperature] = useState(54);
@@ -32,7 +33,13 @@ const Settings = () => {
           <div className='mt-2'>
             <div
               onClick={() => {
-                setSpeed(1);
+                if (speed !== 1) {
+                  setSpeed(1);
+                  sendCustomToast({
+                    message: "🐎 Speed 1 Mode Activated",
+                    bgColor: "#E879F9",
+                  });
+                }
               }}
               className={clsx(
                 "cursor-pointer inline-block text-lg text-center rounded-tl-lg rounded-bl-lg p-2 w-12 h-full text-white",
@@ -42,7 +49,13 @@ const Settings = () => {
             </div>
             <div
               onClick={() => {
-                setSpeed(2);
+                if (speed !== 2) {
+                  setSpeed(2);
+                  sendCustomToast({
+                    message: "🐎 Speed 2 Mode Activated",
+                    bgColor: "#F43F5E",
+                  });
+                }
               }}
               className={clsx(
                 "cursor-pointer inline-block text-lg text-center p-2 w-12 h-full text-white",
@@ -52,7 +65,13 @@ const Settings = () => {
             </div>
             <div
               onClick={() => {
-                setSpeed(3);
+                if (speed !== 3) {
+                  setSpeed(3);
+                  sendCustomToast({
+                    message: "🐎 Speed 3 Mode Activated",
+                    bgColor: "#DB2777",
+                  });
+                }
               }}
               className={clsx(
                 "cursor-pointer inline-block text-lg text-center rounded-tr-lg p-2 rounded-br-lg w-12 h-full text-white",
@@ -66,7 +85,15 @@ const Settings = () => {
           <h3 className='font-semibold text-2xl'>Chill Mode</h3>
           <div className='mt-2'>
             <div
-              onClick={() => setChillMode(1)}
+              onClick={() => {
+                if (chillMode !== 1) {
+                  setChillMode(1);
+                  sendCustomToast({
+                    message: "🥶 Chill Mode Activated",
+                    bgColor: "#22D3EE",
+                  });
+                }
+              }}
               className={clsx(
                 "cursor-pointer inline-block text-lg text-center rounded-tl-lg rounded-bl-lg p-2 w-12 h-full text-white",
                 chillMode === 1 ? "bg-primary-black" : "bg-primary-dark-gray"
@@ -74,7 +101,15 @@ const Settings = () => {
               Yes
             </div>
             <div
-              onClick={() => setChillMode(0)}
+              onClick={() => {
+                if (chillMode !== 0) {
+                  setChillMode(0);
+                  sendCustomToast({
+                    message: "😎 Chill Mode Deactivated",
+                    bgColor: "#22D3EE",
+                  });
+                }
+              }}
               className={clsx(
                 "cursor-pointer inline-block text-lg text-center rounded-tr-lg p-2 rounded-br-lg w-12 h-full text-white",
                 chillMode === 0 ? "bg-primary-black" : "bg-primary-dark-gray"

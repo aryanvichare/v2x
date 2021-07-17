@@ -3,7 +3,7 @@ import moment from "moment";
 
 const Navbar = () => {
   return (
-    <nav className='h-20 max-w-screen-xl mx-auto flex items-center justify-between py-12 px-12 xl:px-0 mb-16'>
+    <nav className='h-20 max-w-screen-xl mx-auto flex items-center justify-between pt-12 px-12 xl:px-0 mb-16'>
       <div className='flex items-center'>
         <svg
           className='h-6 w-6'

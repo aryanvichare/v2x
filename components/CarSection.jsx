@@ -1,3 +1,4 @@
+import { sendCustomToast } from "@/utils/sendToast";
 import React, { useState } from "react";
 import {
   withScriptjs,
@@ -44,7 +45,13 @@ const CarSection = () => {
               <div className='font-semibold text-lg'>Headlight 1</div>
               <Switch
                 className='inline-block'
-                onChange={() => setHl1((s) => !s)}
+                onChange={() => {
+                  sendCustomToast({
+                    message: `🚙 Headlight 1 turned ${hl1 ? "off" : "on"}`,
+                    bgColor: "#FDE047",
+                  });
+                  setHl1((s) => !s);
+                }}
                 checked={hl1}
               />
             </div>
@@ -52,7 +59,13 @@ const CarSection = () => {
               <div className='font-semibold text-lg'>Headlight 2</div>
               <Switch
                 className='inline-block'
-                onChange={() => setHl2((s) => !s)}
+                onChange={() => {
+                  sendCustomToast({
+                    message: `🚙 Headlight 2 turned ${hl1 ? "off" : "on"}`,
+                    bgColor: "#FDE047",
+                  });
+                  setHl2((s) => !s);
+                }}
                 checked={hl2}
               />
             </div>
