@@ -55,7 +55,7 @@ const CarSection = () => {
             googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places&key=${NEXT_PUBLIC_GMAPS_API_KEY}`}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div className='h-48 md:w-full md:h-full' />}
-            mapElement={<div style={{ height: `100%` }} />}
+             mapElement={<div style={{ height: `100%` }} />}
           />
         </div>
       </div>
