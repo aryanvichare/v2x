@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Car,
   Music,
@@ -8,33 +8,49 @@ import {
   Location,
   Settings,
 } from "./icons/icons";
+import clsx from "clsx";
+
+const AppWrapper = ({ initialSelectionState, children }) => {
+  const [selected, setSelected] = useState(initialSelectionState);
+
+  return (
+    <div
+      onClick={() => setSelected((s) => !s)}
+      className={clsx(
+        "cursor-pointer p-2 transition-all duration-100 ease-in-out hover:-translate-y-1 rounded-lg",
+        selected && "bg-primary-light-gray"
+      )}>
+      {children}
+    </div>
+  );
+};
 
 const Apps = () => {
   return (
     <section className='max-w-screen-xl mx-auto flex items-center justify-between pt-8 px-12 xl:px-0'>
       <div className='w-full bg-primary-black rounded-lg px-12 py-8'>
         <div className='flex flex-row flex-wrap items-center justify-between'>
-          <div className='cursor-pointer p-2 transition-all duration-100 ease-in-out hover:bg-primary-light-gray rounded-lg'>
+          <AppWrapper initialSelectionState={false}>
             <Car />
-          </div>
-          <div className='p-2 bg-primary-light-gray rounded-lg'>
+          </AppWrapper>
+          <AppWrapper initialSelectionState={true}>
             <Music />
-          </div>
-          <div className='p-2 bg-primary-light-gray rounded-lg'>
+          </AppWrapper>
+          <AppWrapper initialSelectionState={true}>
             <Fan />
-          </div>
-          <div className='cursor-pointer p-2 transition-all duration-100 ease-in-out hover:bg-primary-light-gray rounded-lg'>
+          </AppWrapper>
+          <AppWrapper initialSelectionState={false}>
             <Voice />
-          </div>
-          <div className='cursor-pointer p-2 transition-all duration-100 ease-in-out hover:bg-primary-light-gray rounded-lg'>
+          </AppWrapper>
+          <AppWrapper initialSelectionState={false}>
             <Share />
-          </div>
-          <div className='p-2 bg-primary-light-gray rounded-lg'>
+          </AppWrapper>
+          <AppWrapper initialSelectionState={true}>
             <Location />
-          </div>
-          <div className='p-2 bg-primary-light-gray rounded-lg'>
+          </AppWrapper>
+          <AppWrapper initialSelectionState={true}>
             <Settings />
-          </div>
+          </AppWrapper>
         </div>
       </div>
     </section>

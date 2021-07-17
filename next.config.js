@@ -10,7 +10,5 @@ const withPWA = require("next-pwa");
 // });
 
 module.exports = {
-  future: {
-    webpack5: true,
-  },
+  webpack5: true,
 };

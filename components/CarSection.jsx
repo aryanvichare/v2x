@@ -26,11 +26,19 @@ const CarSection = () => {
     <section className='max-w-screen-xl mx-auto flex items-center justify-between px-12 xl:px-0'>
       <div className='w-full grid grid-cols-12 gap-4'>
         <div className='col-span-12 md:col-span-6 lg:col-span-5 bg-primary-gray rounded-lg'>
-          <img
-            className='w-full flex items-center p-8'
-            src='/images/car.png'
-            alt='Car'
-          />
+          <div className='relative'>
+            <img
+              className='w-full flex items-center p-8'
+              src='/images/car.png'
+              alt='Car'
+            />
+            {hl1 && (
+              <div className='absolute top-[125px] left-[108px] h-2 w-2 rounded-full bg-yellow-300 shadow-hl-glow' />
+            )}
+            {hl2 && (
+              <div className='absolute top-[125px] right-[108px] h-2 w-2 rounded-full bg-yellow-300 shadow-hl-glow' />
+            )}
+          </div>
           <div className='flex justify-between px-12 pb-4'>
             <div className='flex space-x-2'>
               <div className='font-semibold text-lg'>Headlight 1</div>

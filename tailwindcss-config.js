@@ -1,7 +1,12 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: [],
+  mode: "jit",
+  purge: [
+    "./public/**/*.html",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+  ],
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -825,6 +830,9 @@ module.exports = {
         "primary-light-gray": "#484848",
         "primary-black": "#2B2B2B",
         "primary-green": "#1DB954",
+      },
+      boxShadow: {
+        "hl-glow": "0px 0px 40px 20px #FDE047",
       },
     },
   },
