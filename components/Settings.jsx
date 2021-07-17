@@ -14,7 +14,7 @@ const Settings = () => {
           <div className='mt-2'>
             <div
               onClick={() => setTemperature((t) => t + 1)}
-              className='cursor-pointer inline-block text-lg text-center bg-primary-black rounded-tl-lg rounded-bl-lg p-2 w-12 h-full text-white'>
+              className='select-none cursor-pointer inline-block text-lg text-center bg-primary-black rounded-tl-lg rounded-bl-lg p-2 w-12 h-full text-white'>
               +
             </div>
             <div className='inline-block text-center text-lg bg-primary-black text-white w-12 h-full py-2'>
@@ -22,7 +22,7 @@ const Settings = () => {
             </div>
             <div
               onClick={() => setTemperature((t) => t - 1)}
-              className='cursor-pointer inline-block text-lg text-center bg-primary-black rounded-tr-lg p-2 rounded-br-lg w-12 h-full text-white'>
+              className='select-none cursor-pointer inline-block text-lg text-center bg-primary-black rounded-tr-lg p-2 rounded-br-lg w-12 h-full text-white'>
               -
             </div>
           </div>
@@ -31,7 +31,9 @@ const Settings = () => {
           <h3 className='font-semibold text-2xl'>Speed</h3>
           <div className='mt-2'>
             <div
-              onClick={() => setSpeed(1)}
+              onClick={() => {
+                setSpeed(1);
+              }}
               className={clsx(
                 "cursor-pointer inline-block text-lg text-center rounded-tl-lg rounded-bl-lg p-2 w-12 h-full text-white",
                 speed === 1 ? "bg-primary-black" : "bg-primary-dark-gray"
@@ -39,17 +41,21 @@ const Settings = () => {
               1
             </div>
             <div
-              onClick={() => setSpeed(2)}
+              onClick={() => {
+                setSpeed(2);
+              }}
               className={clsx(
-                "cursor-pointer inline-block text-lg text-center bg-primary-dark-gray p-2 w-12 h-full text-white",
+                "cursor-pointer inline-block text-lg text-center p-2 w-12 h-full text-white",
                 speed === 2 ? "bg-primary-black" : "bg-primary-dark-gray"
               )}>
               2
             </div>
             <div
-              onClick={() => setSpeed(3)}
+              onClick={() => {
+                setSpeed(3);
+              }}
               className={clsx(
-                "cursor-pointer inline-block text-lg text-center bg-primary-dark-gray rounded-tr-lg p-2 rounded-br-lg w-12 h-full text-white",
+                "cursor-pointer inline-block text-lg text-center rounded-tr-lg p-2 rounded-br-lg w-12 h-full text-white",
                 speed === 3 ? "bg-primary-black" : "bg-primary-dark-gray"
               )}>
               3
